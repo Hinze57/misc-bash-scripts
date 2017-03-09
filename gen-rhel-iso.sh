@@ -30,7 +30,7 @@ hostName=$(echo $(hostname -s) | tr "[:lower:]" "[:upper:]")
 # point configFile to file containing variables/functions you want to import/read in
 configFile=$(dirname $0)/local.conf
 # source/import the above configFile
-source ${configFile}
+[[ -f ${configFile} ]] && source ${configFile}
 
 ## Shouldn't need to change anything below this line
 # set up tmp dir for working files 
